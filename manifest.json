@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Web Page Drawing",
+    "version": "1.0",
+    "description": "Draw on any webpage using stylish brushes.",
+    "permissions": ["activeTab", "storage"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"],
+            "css": ["style.css"]
+        }
+    ]
+}
